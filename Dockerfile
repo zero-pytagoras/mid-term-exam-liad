@@ -13,14 +13,14 @@ RUN poetry config virtualenvs.create false \
 
 RUN adduser --system --no-create-home --group appuser
 
-COPY app.py ./
+COPY app.py ./ # too many COPY -> could have done it in command
 COPY templates ./templates
 
 RUN chown -R appuser:appuser /app
 
 USER appuser
 
-ENV PORT=5000 \
+ENV PORT=5000 \ # why not pass it as ARGS first ?
     VERSION=1.0.0
 
 EXPOSE 5000
