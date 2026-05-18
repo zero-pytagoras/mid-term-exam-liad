@@ -24,13 +24,13 @@ require_root() {
     fi
 }
 
-load_env() {
+load_env() { #why not to suggest to copy it from existing exmaple ?
     if [[ ! -f "${REPO_DIR}/.env" ]]; then
         echo "ERROR: .env file not found at ${REPO_DIR}/.env" >&2
         exit 1
     fi
 
-    set -a
+    set -a # why ?
     source "${REPO_DIR}/.env"
     set +a
 
@@ -43,7 +43,7 @@ load_env() {
     fi
 }
 
-build_image() {
+build_image() { # why not docker compose ?
     docker build -t "${IMAGE_NAME}" "${REPO_DIR}"
 }
 
