@@ -5,7 +5,7 @@ description = "Internal status dashboard service"
 authors = [
     {name = "Liad Binyamin",email = "liad.binyaminn@gmail.com"}
 ]
-requires-python = "^3.12"
+requires-python = "^3.12" # why not to pin it down ?
 dependencies = [
     "flask (==3.0.3)",
     "python-dotenv (==1.2.2)",
