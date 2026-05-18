@@ -34,7 +34,7 @@ load_env() { #why not to suggest to copy it from existing exmaple ?
     source "${REPO_DIR}/.env"
     set +a
 
-    PORT="${PORT:-5000}"
+    PORT="${PORT:-5000}" # why not debug these ?
     VERSION="${VERSION:-1.0.0}"
 
     if [[ -z "${API_KEY:-}" ]]; then
@@ -81,13 +81,13 @@ install_nginx_site() {
 }
 
 print_success() {
-    echo " "
+    echo " " # why not single printf ?
     echo "SUCCESS: status-dashboard is up."
     echo "  Local:  http://localhost/"
     echo "  API:    http://localhost/api/status"
 }
 
-main() {
+main() { # why not to put this at the beginnging
     require_root
     load_env
     build_image
